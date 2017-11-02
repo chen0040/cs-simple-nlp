@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A7202DCD-C953-46B4-9986-7970E7B672F7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyNLP</RootNamespace>
+    <AssemblyName>cs-simple-nlp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="cs-optimization-continuous-solutions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\cs-optimization-continuous-solutions.1.0.1\lib\net452\Release\cs-optimization-continuous-solutions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Chunking\ChunkingLogLinearModel.cs" />
+    <Compile Include="Corpus.cs" />
+    <Compile Include="Correction\SpellingCorrection.cs" />
+    <Compile Include="DependencyParsing\DPGlobalFeatureFunction.cs" />
+    <Compile Include="DependencyParsing\DPGlobalLinearModel.cs" />
+    <Compile Include="DependencyParsing\DPSet.cs" />
+    <Compile Include="Events\LongProcessNotificationEventArgs.cs" />
+    <Compile Include="Grammars\CFG.cs" />
+    <Compile Include="Grammars\CFGParser.cs" />
+    <Compile Include="Grammars\CKY.cs" />
+    <Compile Include="Grammars\CNF.cs" />
+    <Compile Include="Grammars\CNFParser.cs" />
+    <Compile Include="Grammars\GrammarLexicalizationHelper.cs" />
+    <Compile Include="Grammars\GrammarTreeNode.cs" />
+    <Compile Include="Grammars\IGrammar.cs" />
+    <Compile Include="Grammars\IParser.cs" />
+    <Compile Include="Grammars\LexicalizedPCFG.cs" />
+    <Compile Include="Grammars\LexicalizedPCFGParser.cs" />
+    <Compile Include="Grammars\ParseTreeEvaluator.cs" />
+    <Compile Include="Grammars\ParseTreeSpanHelper.cs" />
+    <Compile Include="Grammars\PCFG.cs" />
+    <Compile Include="Grammars\PCFGParser.cs" />
+    <Compile Include="Grammars\PennTreeBankHelper.cs" />
+    <Compile Include="Grammars\ProductionRule.cs" />
+    <Compile Include="Grammars\Span.cs" />
+    <Compile Include="Helpers\BinaryHeapMaxPQ.cs" />
+    <Compile Include="Helpers\Constants.cs" />
+    <Compile Include="Helpers\ILongProcess.cs" />
+    <Compile Include="Helpers\IMaxPQ.cs" />
+    <Compile Include="Helpers\MaxPQ.cs" />
+    <Compile Include="Helpers\MinPQ.cs" />
+    <Compile Include="Helpers\SortUtil.cs" />
+    <Compile Include="Helpers\SpecialFunctions.cs" />
+    <Compile Include="Helpers\XmlHelper.cs" />
+    <Compile Include="HMM\SmoothEstimation.cs" />
+    <Compile Include="HMM\TriGramHMM.cs" />
+    <Compile Include="HMM\Viterbi.cs" />
+    <Compile Include="ITokenizer.cs" />
+    <Compile Include="LanguageIdentifiers\NGramLanguageIdentifier.cs" />
+    <Compile Include="LanguageModels\BaseFeatureFunction.cs" />
+    <Compile Include="LanguageModels\GlobalLinearModel.cs" />
+    <Compile Include="LanguageModels\IFeatureFunction.cs" />
+    <Compile Include="LanguageModels\LogLinearModel.cs" />
+    <Compile Include="LanguageModels\LogLinearModelCostFunction.cs" />
+    <Compile Include="LanguageModels\NGram.cs" />
+    <Compile Include="LanguageModels\NGramModel.cs" />
+    <Compile Include="LanguageModels\NGramModel_Letter.cs" />
+    <Compile Include="LanguageModels\NGramModel_Word.cs" />
+    <Compile Include="LanguageModels\PairedDataInstance.cs" />
+    <Compile Include="LanguageModels\Perceptron.cs" />
+    <Compile Include="MachineTranslation\AlignmentDistortionMapper.cs" />
+    <Compile Include="MachineTranslation\EMTrainingMethod.cs" />
+    <Compile Include="MachineTranslation\EMTrainingRecord.cs" />
+    <Compile Include="MachineTranslation\IBMModel1.cs" />
+    <Compile Include="MachineTranslation\IBMModel2.cs" />
+    <Compile Include="MachineTranslation\PhraseBasedModel.cs" />
+    <Compile Include="MachineTranslation\SimpleTrainingMethod.cs" />
+    <Compile Include="MachineTranslation\SimpleTrainingRecord.cs" />
+    <Compile Include="MachineTranslation\WordByWordTranslationMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Segmentation\TextSegmentation.cs" />
+    <Compile Include="Tagging\FAQSegmentationFeatureFunction.cs" />
+    <Compile Include="Tagging\FAQSegmentationInput.cs" />
+    <Compile Include="Tagging\FAQSegmentationLogLinearModel.cs" />
+    <Compile Include="Tagging\HistoryInstance.cs" />
+    <Compile Include="Tagging\LogViterbi.cs" />
+    <Compile Include="Tagging\SentenceStructure.cs" />
+    <Compile Include="Tagging\TaggedSentence.cs" />
+    <Compile Include="Tagging\TaggingGlobalFeatureFunction.cs" />
+    <Compile Include="Tagging\TaggingGlobalLinearModel.cs" />
+    <Compile Include="Tagging\TaggingLocalFeatureFunction.cs" />
+    <Compile Include="Tagging\TaggingLogLinearModel.cs" />
+    <Compile Include="Tagging\TagSequence.cs" />
+    <Compile Include="Tokenizers\EnglishTokenizer.cs" />
+    <Compile Include="Tokenizers\FrenchTokenizer.cs" />
+    <Compile Include="Tokenizers\PairedToken.cs" />
+    <Compile Include="Tokenizers\PairedTokenizer.cs" />
+    <Compile Include="WordClustering\BCNode.cs" />
+    <Compile Include="WordClustering\BrownClustering.cs" />
+    <Compile Include="WordClustering\ClusterQualityEvaluator.cs" />
+    <Compile Include="WordClustering\ClusterTaskResult.cs" />
+    <Compile Include="WordClustering\OneLinkageClustering.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

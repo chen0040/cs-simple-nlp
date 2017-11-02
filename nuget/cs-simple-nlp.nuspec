@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>cs-simple-nlp</id>
+    <version>1.0.1</version>
+    <authors>chen0040</authors>
+    <owners>chen0040</owners>
+    <licenseUrl>https://github.com/chen0040/cs-simple-nlp/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/chen0040/cs-simple-nlp</projectUrl>
+    <iconUrl>https://rawgit.com/chen0040/cs-simple-nlp/master/icon.jpg</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>cs-simple-nlp</description>
+    <releaseNotes>Simple NLP</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>NLP, c-sharp</tags>
+    <dependencies>
+      
+    </dependencies>
+  </metadata>
+</package>
